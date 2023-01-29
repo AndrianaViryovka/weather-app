@@ -24,7 +24,6 @@ function App() {
                 <a
                   id="git-link"
                   href="https://github.com/AndrianaViryovka/SheCodes-weather-app"
-                  target="_blank"
                 >
                   Open-sourced on GitHub
                 </a>
@@ -32,7 +31,6 @@ function App() {
                 <a
                   id="netlify-link"
                   href="https://euphonious-piroshki-2d6a21.netlify.app"
-                  target="_blank"
                 >
                   hosted on Netlify
                 </a>
