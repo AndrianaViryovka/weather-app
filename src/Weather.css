@@ -1,0 +1,159 @@
+h1 {
+  padding: 20px 0px 0px 20px;
+  margin: 0;
+  font-family: "Oxygen", sans-serif;
+  font-size: 56px !important;
+  text-align: left;
+  color: #e4968a;
+}
+.cityTemperature {
+  padding: 0px 0px 0px 0px;
+  font-size: 90px !important;
+  font-style: normal;
+  margin: 0;
+  font-family: "Oxygen", sans-serif;
+  color: #e4968a;
+  text-align: right;
+}
+.dateMonth {
+  padding: 0px 0px 0px 20px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 48px;
+  font-weight: 400;
+  text-align: left;
+  color: #c9cfd3;
+}
+.temperature {
+  padding: 0px 0px 0px 20px;
+  font-size: 26px;
+  line-height: 48px;
+  font-weight: 400;
+  margin: 0;
+  text-align: left;
+  color: #c9cfd3;
+  text-transform: capitalize;
+}
+.dividerClass {
+  text-align: center;
+  color: whitesmoke;
+  border-width: 2px;
+  margin: 0px;
+  padding: 10px;
+  margin-left: 50px;
+  margin-right: 80px;
+}
+.row {
+  text-align: center;
+  align-content: right;
+  padding: 0px 0px 0px 20px;
+  margin: 0;
+  width: 100%;
+}
+#card-text {
+  font-size: 22px;
+}
+.weatherApp {
+  max-width: 850px;
+  border: 1px solid;
+  padding: 0px 0px 20px 0px;
+  border-radius: 15px;
+  border-color: rgba(75, 98, 122, 1) 42%;
+  border-width: 1px;
+  background: rgb(141, 185, 230);
+  background: linear-gradient(
+    0deg,
+    rgba(141, 185, 230, 1) 0%,
+    rgba(75, 98, 122, 1) 42%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  margin: 80px auto 30px auto;
+}
+.text-left {
+  width: 80%;
+}
+.inputGroup {
+  text-align: left;
+  padding: 20px 0px 20px 20px;
+  margin: 0;
+}
+.units {
+  position: relative;
+  top: -50px;
+  color: #c9cfd3;
+  text-decoration: none;
+}
+.linkColor {
+  color: #c9cfd3;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 20px;
+  text-align: right;
+}
+ul {
+  margin: 100px;
+  padding: 0px;
+  list-style: none;
+  text-align: left;
+  color: #c9cfd3;
+  font-size: 18px;
+}
+.card-body {
+  background-color: #e2c0bb;
+}
+.GitNetlifyLink {
+  display: block;
+  padding: 0px 0px 0px 0px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+#icon {
+  margin-top: -10%;
+  max-height: 100px;
+  max-width: 100px;
+}
+#cityButton {
+  color: #e4968a;
+  font-size: 30px;
+}
+
+#cityButton:hover {
+  color: #e4968a;
+}
+a {
+  padding: 0px 0px 0px 10px;
+  margin-top: -20%;
+}
+#fahrenheit-link {
+  padding: 0px 0px 0px 0px;
+  margin: 0;
+}
+#git-link {
+  text-decoration: none;
+  color: #c9cfd3;
+}
+#netlify-link {
+  text-decoration: none;
+  color: #c9cfd3;
+}
+#weather-icon {
+  margin-left: -5px;
+  max-height: 80px;
+  max-width: 100px;
+}
+.weather-forecast-date {
+  font-size: 26px;
+}
+.btn.btn-primary {
+  background-color: #e4968a;
+  border: none;
+  color: black;
+}
+.btn.btn-secondary {
+  background-color: #c9cfd3;
+  border: none;
+  color: black;
+}
+.form-control {
+  text-align: center !important;
+}
