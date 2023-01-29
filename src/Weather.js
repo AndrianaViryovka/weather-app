@@ -46,11 +46,11 @@ export default function Weather() {
                 -1
               </strong>
               <span class="units">
-                <a class="linkColor" href="#" id="celsius-link">
+                <a class="linkColor" href="/" id="celsius-link">
                   °C
                 </a>
                 |
-                <a class="linkColor" href="#" id="fahrenheit-link">
+                <a class="linkColor" href="/" id="fahrenheit-link">
                   °F
                 </a>
               </span>
