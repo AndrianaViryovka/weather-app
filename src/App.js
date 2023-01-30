@@ -19,7 +19,7 @@ function App() {
         <div className="container">
           <header className="App-header">
             <p>
-              <Weather />
+              <Weather defaultCity="London" />
               <small class="GitNetlifyLink">
                 <a
                   id="git-link"
@@ -30,7 +30,7 @@ function App() {
                 and
                 <a
                   id="netlify-link"
-                  href="https://euphonious-piroshki-2d6a21.netlify.app"
+                  href="https://super-khapse-7aa17a.netlify.app/"
                 >
                   hosted on Netlify
                 </a>
