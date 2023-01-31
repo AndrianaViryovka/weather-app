@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
@@ -22,91 +22,53 @@ export default function Weather(props) {
         "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-night.png",
     });
   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
   if (weatherData.ready) {
     return (
       <div class="weatherApp">
-        <div class="container text-left">
-          <div class="row">
-            <div class="col">
-              <h1 id="city">{weatherData.city}</h1>
-              <p class="dateMonth" id="datetime">
-                <FormattedDate date={weatherData.date} />
-              </p>
-              <div class="temperature">
-                <span id="description">{weatherData.description}</span>
-              </div>
-              <form class="inputGroup row" id="search-form">
-                <div class="col-3">
-                  <button type="button" class="btn btn-primary">
-                    current
-                  </button>
-                </div>
-                <div class="col-6">
-                  <input
-                    type="search"
-                    id="city-search"
-                    placeholder="Search city"
-                    class="form-control"
-                  />
-                </div>
-                <div class="col-3">
-                  <input
-                    type="submit"
-                    value="search"
-                    class="btn btn-secondary"
-                  />
-                </div>
-              </form>
+        <form onSubmit={handleSubmit}>
+          <form class="inputGroup row" id="search-form">
+            <div class="col-6">
+              <input
+                type="search"
+                id="city-search"
+                placeholder="Search city..."
+                className="form-control"
+                onChange={handleCityChange}
+              />
             </div>
-
-            <div class="col">
-              <p>
-                <img
-                  alt={weatherData.description}
-                  id="icon"
-                  src={weatherData.iconUrl}
-                />
-                <strong class="cityTemperature" id="city-temp">
-                  {Math.round(weatherData.temperature)}
-                </strong>
-                <span class="units">
-                  <a class="linkColor" href="/" id="celsius-link">
-                    °C
-                  </a>
-                  |
-                  <a class="linkColor" href="/" id="fahrenheit-link">
-                    °F
-                  </a>
-                </span>
-              </p>
-              <ul>
-                <li>
-                  Feels like:{" "}
-                  <span id="feels_like">
-                    {Math.round(weatherData.feels_like)}
-                  </span>
-                  °C
-                </li>
-                <li>
-                  Humidity:{" "}
-                  <span id="humidity">{Math.round(weatherData.humidity)}</span>%
-                </li>
-                <li>
-                  Wind: <span id="wind">{Math.round(weatherData.wind)}</span>
-                  km/h
-                </li>
-              </ul>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                className="btn btn-secondary w-100"
+              />
             </div>
-          </div>
-        </div>
-        <hr class="dividerClass" />
+          </form>
+        </form>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
-    const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-
+    //  const apiKey = "f4ff5751e00t63c15a8eb8eo1612abfe";
+    // let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    // axios.get(apiUrl).then(handleResponse);
+    search();
     return "Loading...";
   }
 }

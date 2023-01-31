@@ -8,7 +8,7 @@ h1 {
 }
 .cityTemperature {
   padding: 0px 0px 0px 0px;
-  font-size: 90px !important;
+  font-size: 70px !important;
   font-style: normal;
   margin: 0;
   font-family: "Oxygen", sans-serif;
@@ -91,7 +91,6 @@ h1 {
   text-align: right;
 }
 ul {
-  margin: 100px;
   padding: 0px;
   list-style: none;
   text-align: left;
@@ -109,8 +108,8 @@ ul {
 }
 #icon {
   margin-top: -10%;
-  max-height: 100px;
-  max-width: 100px;
+  max-height: 80px;
+  max-width: 80px;
 }
 #cityButton {
   color: #e4968a;
@@ -138,19 +137,15 @@ a {
 }
 #weather-icon {
   margin-left: -5px;
-  max-height: 80px;
+  max-height: 100px;
   max-width: 100px;
 }
 .weather-forecast-date {
   font-size: 26px;
 }
-.btn.btn-primary {
-  background-color: #e4968a;
-  border: none;
-  color: black;
-}
+
 .btn.btn-secondary {
-  background-color: #c9cfd3;
+  background-color: #e4968a;
   border: none;
   color: black;
 }
