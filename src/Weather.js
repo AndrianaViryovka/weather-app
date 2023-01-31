@@ -18,8 +18,8 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       icon: response.data.weather[0].icon,
       city: response.data.name,
-      iconUrl:
-        "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-night.png",
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      //    "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-night.png",
     });
   }
 
@@ -42,7 +42,7 @@ export default function Weather(props) {
     return (
       <div class="weatherApp">
         <form onSubmit={handleSubmit}>
-          <form class="inputGroup row" id="search-form">
+          <div class="inputGroup row" id="search-form">
             <div class="col-6">
               <input
                 type="search"
@@ -52,6 +52,7 @@ export default function Weather(props) {
                 onChange={handleCityChange}
               />
             </div>
+
             <div class="col-3">
               <input
                 type="submit"
@@ -59,8 +60,9 @@ export default function Weather(props) {
                 className="btn btn-secondary w-100"
               />
             </div>
-          </form>
+          </div>
         </form>
+
         <WeatherInfo data={weatherData} />
       </div>
     );
