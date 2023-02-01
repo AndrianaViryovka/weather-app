@@ -19,8 +19,6 @@ export default function WeatherInfo(props) {
           </div>
 
           <div class="col-6">
-              />
-              <strong class="cityTemperature" id="city-temp">
             <div class="row">
               <div class="col-4">
                 <img
