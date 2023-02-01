@@ -22,7 +22,7 @@ h1 {
   line-height: 48px;
   font-weight: 400;
   text-align: left;
-  color: #c9cfd3;
+  color: #e4e9ec;
 }
 .temperature {
   padding: 0px 0px 0px 20px;
@@ -31,7 +31,7 @@ h1 {
   font-weight: 400;
   margin: 0;
   text-align: left;
-  color: #c9cfd3;
+  color: #e4e9ec;
   text-transform: capitalize;
 }
 .dividerClass {
@@ -91,7 +91,7 @@ ul {
   padding: 0px;
   list-style: none;
   text-align: left;
-  color: #c9cfd3;
+  color: #e4e9ec;
   font-size: 18px;
   margin-top: 40px !important;
 }
