@@ -19,7 +19,7 @@ function App() {
         <div className="container">
           <header className="App-header">
             <p>
-              <Weather defaultCity="Kyiv" />
+              <Weather defaultCity="Sydney" />
               <small class="GitNetlifyLink">
                 <a
                   id="git-link"
