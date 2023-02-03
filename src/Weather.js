@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
+
 import axios from "axios";
 import "./Weather.css";
 
@@ -10,16 +12,16 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      temperature: response.data.main.temp,
-      date: new Date(response.data.dt * 1000),
-      feels_like: response.data.main.feels_like,
-      description: response.data.weather[0].description,
+      coordinates: response.data.coordinates,
+      temperature: response.data.temperature.current,
+      date: new Date(response.data.time * 1000),
+      feels_like: response.data.temperature.feels_like,
+      description: response.data.condition.description,
       wind: response.data.wind.speed,
-      humidity: response.data.main.humidity,
-      icon: response.data.weather[0].icon,
-      city: response.data.name,
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      //    "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-night.png",
+      humidity: response.data.temperature.humidity,
+      icon: response.data.condition.icon,
+      city: response.data.city,
+      iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
     });
   }
 
@@ -33,8 +35,8 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiKey = "f4ff5751e00t63c15a8eb8eo1612abfe";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -64,12 +66,14 @@ export default function Weather(props) {
         </form>
 
         <WeatherInfo data={weatherData} />
+        <hr class="dividerClass" />
+        <WeatherForecast
+          data={weatherData}
+          coordinates={weatherData.coordinates}
+        />
       </div>
     );
   } else {
-    //  const apiKey = "f4ff5751e00t63c15a8eb8eo1612abfe";
-    // let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-    // axios.get(apiUrl).then(handleResponse);
     search();
     return "Loading...";
   }

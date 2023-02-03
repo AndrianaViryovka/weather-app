@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
+
 import "./Weather.css";
 
 export default function WeatherInfo(props) {
@@ -49,7 +50,6 @@ export default function WeatherInfo(props) {
           </div>
         </div>
       </div>
-      <hr class="dividerClass" />
     </div>
   );
 }
